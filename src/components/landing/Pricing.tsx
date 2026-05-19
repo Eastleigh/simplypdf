@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Check,
@@ -8,11 +9,13 @@ import {
   Rocket,
   Zap,
   ArrowRight,
+  Loader2,
 } from "lucide-react";
 
 const plans = [
   {
     name: "Starter",
+    key: "starter",
     price: "$29",
     period: "one-time",
     description: "Perfect for curious beginners ready to explore",
@@ -29,6 +32,7 @@ const plans = [
   },
   {
     name: "Pro",
+    key: "pro",
     price: "$49",
     period: "/month",
     description: "For serious builders ready to launch and scale",
@@ -51,6 +55,7 @@ const plans = [
   },
   {
     name: "Enterprise",
+    key: "enterprise",
     price: "$299",
     period: "/month",
     description: "Done-for-you AI business generation for agencies",
@@ -71,6 +76,30 @@ const plans = [
 ];
 
 export default function Pricing() {
+  const [loading, setLoading] = useState<string | null>(null);
+
+  async function handleCheckout(planKey: string) {
+    setLoading(planKey);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ plan: planKey }),
+      });
+      const data = await res.json();
+
+      if (data.url) {
+        window.location.assign(data.url);
+      } else {
+        console.error("Checkout error:", data.error);
+        setLoading(null);
+      }
+    } catch (err) {
+      console.error("Checkout error:", err);
+      setLoading(null);
+    }
+  }
+
   return (
     <section id="pricing" className="relative py-24 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-radial opacity-30" />
@@ -139,10 +168,21 @@ export default function Pricing() {
               </ul>
 
               <button
-                className={`w-full py-3 px-6 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200 ${plan.buttonStyle}`}
+                onClick={() => handleCheckout(plan.key)}
+                disabled={loading !== null}
+                className={`w-full py-3 px-6 rounded-xl font-medium text-sm flex items-center justify-center gap-2 transition-all duration-200 disabled:opacity-60 disabled:cursor-not-allowed ${plan.buttonStyle}`}
               >
-                Get Started
-                <ArrowRight className="w-4 h-4" />
+                {loading === plan.key ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Redirecting...
+                  </>
+                ) : (
+                  <>
+                    Get Started
+                    <ArrowRight className="w-4 h-4" />
+                  </>
+                )}
               </button>
             </motion.div>
           ))}
