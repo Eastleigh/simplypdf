@@ -1,0 +1,9 @@
+export { default as Navbar } from "./Navbar";
+export { default as Hero } from "./Hero";
+export { default as Features } from "./Features";
+export { default as TrendDashboard } from "./TrendDashboard";
+export { default as AIBuilder } from "./AIBuilder";
+export { default as Pricing } from "./Pricing";
+export { default as SocialProof } from "./SocialProof";
+export { default as FinalCTA } from "./FinalCTA";
+export { default as Footer } from "./Footer";
