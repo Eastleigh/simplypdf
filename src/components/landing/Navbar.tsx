@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Zap, Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "How It Works", href: "#how-it-works" },
   { label: "Features", href: "#features" },
   { label: "Trends", href: "#trends" },
   { label: "AI Builder", href: "#ai-builder" },

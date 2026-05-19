@@ -1,6 +1,7 @@
 import {
   Navbar,
   Hero,
+  HowItWorks,
   Features,
   TrendDashboard,
   AIBuilder,
@@ -16,6 +17,7 @@ export default function Home() {
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <HowItWorks />
         <Features />
         <TrendDashboard />
         <AIBuilder />
