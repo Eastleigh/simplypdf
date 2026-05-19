@@ -35,7 +35,7 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-sm text-accent mb-8"
           >
             <Sparkles className="w-4 h-4" />
-            <span>AI-Powered Business Discovery</span>
+            <span>Your AI Treasure Hunter</span>
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
           </motion.div>
 
@@ -46,10 +46,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tight"
           >
-            Your AI finds{" "}
-            <span className="text-gradient">profitable businesses</span>{" "}
-            for you{" "}
-            <span className="text-gradient">daily</span>
+            Find what&apos;s selling.{" "}
+            <span className="text-gradient">Launch your business.</span>{" "}
+            <span className="text-gradient">Today.</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -59,9 +58,9 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-6 text-lg sm:text-xl text-muted max-w-2xl mx-auto leading-relaxed"
           >
-            Start an online income stream in 24 hours — even if you&apos;re starting
-            from zero. AI scans TikTok, Etsy, Gumroad &amp; more to find what&apos;s
-            selling <em>before</em> everyone else.
+            SimplyPDF is an AI treasure hunter that finds what people are
+            buying online right now — then builds you a ready-to-launch business
+            around it. Even if you&apos;re starting from zero.
           </motion.p>
 
           {/* CTA Buttons */}

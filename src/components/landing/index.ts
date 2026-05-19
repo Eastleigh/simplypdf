@@ -1,5 +1,6 @@
 export { default as Navbar } from "./Navbar";
 export { default as Hero } from "./Hero";
+export { default as HowItWorks } from "./HowItWorks";
 export { default as Features } from "./Features";
 export { default as TrendDashboard } from "./TrendDashboard";
 export { default as AIBuilder } from "./AIBuilder";

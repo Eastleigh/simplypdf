@@ -21,13 +21,18 @@ export default function FinalCTA() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-6xl font-bold leading-tight">
-            Stop scrolling.{" "}
-            <span className="text-gradient">Start earning.</span>
+            Most people fail online because{" "}
+            <span className="text-gradient">they&apos;re guessing.</span>
           </h2>
 
           <p className="mt-6 text-lg text-muted max-w-2xl mx-auto">
-            Every day you wait, someone else discovers the trend you missed.
-            Join 3,400+ members who let AI find their next income stream.
+            SimplyPDF removes the guessing. It watches the internet 24/7, finds
+            products and trends people are already spending money on, and uses AI
+            to help you turn those trends into your own online business.
+          </p>
+
+          <p className="mt-4 text-xl font-semibold text-foreground">
+            It&apos;s like getting tomorrow&apos;s business opportunities today.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
